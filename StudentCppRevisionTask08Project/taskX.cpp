@@ -45,6 +45,41 @@
 *	[output 6]: Error.
 */
 
+
+
 string taskX(int a1, int b1, int c1, int a2, int b2, int c2) {
-	return "?";
+	if (a1 <= 0 || b1 <= 0 || c1 <= 0 || a2 <= 0 || b2 <= 0 || c2 <= 0) {
+		return "Error.";
+	}
+
+	if (a1 > b1) {
+		swap(a1, b1);
+	}
+	if (b1 > c1) {
+		swap(b1, c1);
+	}
+	if (a1 > b1) {
+		swap(a1, b1);
+	}
+
+	if (a2 > b2) {
+		swap(a2, b2);
+	}
+	if (b2 > c2) {
+		swap(b2, c2);
+	}
+	if (a2 > b2) {
+		swap(a2, b2);
+	}
+
+	if (a1 == a2 && b1 == b2 && c1 == c2) {
+		return "Boxes are equal.";
+	}
+	if (a1 >= a2 && b1 >= b2 && c1 >= c2) {
+		return "The first box is larger than the second one.";
+	}
+	if (a1 <= a2 && b1 <= b2 && c1 <= c2) {
+		return "The first box is smaller than the second one.";
+	}
+	return "Boxes are incomparable.";
 }
